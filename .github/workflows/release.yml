@@ -23,6 +23,6 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.RELEASE_TOKEN }}"
-          prerelease: false
+          prerelease: true
           files: |
             gnvm.exe
