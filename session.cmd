@@ -49,7 +49,8 @@ goto exit
 :version
 echo Current version 0.0.1.
 echo Copyright (C) 2014-2016 Kenshin Wang kenshin@ksria.com
-echo See https://github.com/kenshin/gnvm for more information.
+echo Copyright (C) 2022 Fallenwood <fallenwood@foxmail.com>
+echo See https://github.com/fallenwood/gnvm for more information.
 goto exit
 
 ::===========================================================

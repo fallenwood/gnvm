@@ -1,6 +1,11 @@
-v0.2.0 2016-04-27
+v0.2.1 2022-05-27
 
 CHANGELOG
+- 2022-05-27, Version 0.2.1:
+* Forked by @fallenwood
+* Use github action instead of travis
+* Add go module
+
 - 2016-04-27, Version 0.2.0:
 * Add new feature `gnvm session` Use any Node.js version of the local already exists version by current session.
 * Add new feature `gnvm npm`     NPM version management.
