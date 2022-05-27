@@ -131,8 +131,8 @@ func readConfig() {
 */
 func SetConfig(key string, value interface{}) string {
 	if key == "registry" {
-		if !strings.HasPrefix(value.(string), "http://") {
-			P(WARING, "%v need %v", value.(string), "http://", "\n")
+		if !strings.HasPrefix(value.(string), "http://") && !strings.HasPrefix(value.(string), "https://") {
+			P(WARING, "%v need %v", value.(string), "http(s)://", "\n")
 			value = "http://" + value.(string)
 		}
 		if !strings.HasSuffix(value.(string), "/") {

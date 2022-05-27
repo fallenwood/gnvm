@@ -347,6 +347,18 @@ gnvm config registry test     :Validation .gnvmfile registry property.
 				if newValue := config.SetConfig(args[0], util.ORIGIN_TAOBAO); newValue != "" {
 					P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
 				}
+			case "TUNA":
+				if newValue := config.SetConfig(args[0], util.ORIGIN_TUNA); newValue != "" {
+					P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
+				}
+			case "OPENTUNA":
+				if newValue := config.SetConfig(args[0], util.ORIGIN_OPENTUNA); newValue != "" {
+					P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
+				}
+			case "USTC":
+				if newValue := config.SetConfig(args[0], util.ORIGIN_USTC); newValue != "" {
+					P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
+				}
 			case "test":
 				config.Verify()
 			default:

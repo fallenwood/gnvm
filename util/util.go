@@ -22,6 +22,7 @@ import (
 )
 
 const (
+	// TODO: no .exe on *nix
 	NODE = "node.exe"
 	GNVM = "gnvm.exe"
 
@@ -30,10 +31,13 @@ const (
 	GLOBAL  = "global"
 	NPM     = "npm"
 
-	ORIGIN_DEFAULT = "http://nodejs.org/dist/"
-	ORIGIN_TAOBAO  = "http://npm.taobao.org/mirrors/node/"
-	NODELIST       = "index.json"
-	SHASUMS        = "SHASUMS256.txt"
+	ORIGIN_DEFAULT  = "http://nodejs.org/dist/"
+	ORIGIN_TAOBAO   = "http://npm.taobao.org/mirrors/node/"
+	ORIGIN_TUNA     = "https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/"
+	ORIGIN_OPENTUNA = "https://opentuna.cn/nodejs-release/"
+	ORIGIN_USTC     = "https://mirrors.ustc.edu.cn/node/"
+	NODELIST        = "index.json"
+	SHASUMS         = "SHASUMS256.txt"
 )
 
 var DIVIDE = string(os.PathSeparator)

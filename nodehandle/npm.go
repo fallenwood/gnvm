@@ -24,10 +24,13 @@ import (
 )
 
 const (
-	LATNPMURL  = "https://raw.githubusercontent.com/npm/npm/master/package.json"
-	NPMTAOBAO  = "http://npm.taobao.org/mirrors/npm/"
-	NPMDEFAULT = "https://github.com/npm/npm/releases/"
-	ZIP        = ".zip"
+	LATNPMURL   = "https://raw.githubusercontent.com/npm/cli/latest/package.json"
+	NPMTAOBAO   = "http://npm.taobao.org/mirrors/npm/"
+	NPMDEFAULT  = "https://github.com/npm/cli/archive/refs/tags/"
+	NPMTUNA     = "https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/npm/"
+	NPMOPENTUNA = "https://opentuna.cn/nodejs-release/npm/"
+	NPMUSTC     = "https://mirrors.ustc.edu.cn/node/npm/"
+	ZIP         = ".zip"
 )
 
 /*
@@ -365,10 +368,18 @@ func getLocalNPMVer() string {
 */
 func downloadNpm(ver string) {
 	version := "v" + ver + ZIP
-	url := NPMTAOBAO + version
-	if config.GetConfig(config.REGISTRY) != util.ORIGIN_TAOBAO {
-		url = NPMDEFAULT + version
+	host := NPMDEFAULT
+	switch config.GetConfig(config.REGISTRY) {
+	case util.ORIGIN_TAOBAO:
+		host = NPMTAOBAO
+	case util.ORIGIN_TUNA:
+		host = NPMTUNA
+	case util.ORIGIN_OPENTUNA:
+		host = NPMOPENTUNA
+	case util.ORIGIN_USTC:
+		host = NPMUSTC
 	}
+	url := host + version
 
 	// create npm
 	npm.New().SetZip(version)
