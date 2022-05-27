@@ -663,9 +663,11 @@ func Version(remote, detail bool) {
 	}
 
 	cp := CP{Red, true, None, true, "Kenshin Wang"}
+	cp1 := CP{Red, true, None, true, "fallenwood"}
 	P(DEFAULT, "Current version %v %v.", localVersion, arch, "\n")
 	P(DEFAULT, "Copyright (C) 2014-2016 %v <kenshin@ksria.com>", cp, "\n")
-	cp.FgColor, cp.Value = Blue, "https://github.com/kenshin/gnvm"
+	P(DEFAULT, "Copyright (C) 2022 %v <fallenwood@foxmail.com>", cp1, "\n")
+	cp.FgColor, cp.Value = Blue, "https://github.com/fallenwood/gnvm"
 	P(DEFAULT, "See %v for more information.", cp, "\n")
 
 	if !remote {

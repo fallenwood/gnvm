@@ -26,7 +26,8 @@ var gnvmCmd = &cobra.Command{
 	Short: "GNVM is simple Node.js version manager on Windows by GO.",
 	Long: `GNVM is simple Node.js version manager on Windows by GO. e.g. nvm, nvmw, nodist.
 Copyright (C) 2014-2016 Kenshin Wang <kenshin@ksria.com>
-See https://github.com/kenshin/gnvm for more information.
+Copyright (C) 2022 Fallenwood <fallenwood@foxmail.com>
+See https://github.com/fallenwood/gnvm for more information.
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		// TO DO
