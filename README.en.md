@@ -1,11 +1,11 @@
-![logo](http://i.imgur.com/Z4iPSgQ.png) GNVM - Node.js version manager on Windows  
-================================  
+![logo](http://i.imgur.com/Z4iPSgQ.png) GNVM - Node.js version manager on Windows
+================================
 [![Travis][travis-badge]][travis-link]
 [![Version][version-badge]][version-link]
 [![Gitter][gitter-badge]][gitter-link]
 [![Slack][slack-badge]][slack-link]
-[![Jianliao][jianliao-badge]][jianliao-link]  
-#### `GNVM` is simple multiple Node.js version manager by Go, like `nvm` `nvmw` `nodist`.  
+[![Jianliao][jianliao-badge]][jianliao-link]
+#### `GNVM` is simple multiple Node.js version manager by Go, like `nvm` `nvmw` `nodist`.
 ```
 c:\> gnvm install latest 1.0.0-x86 1.0.0-x64 5.0.0
 Start download Node.js versions [5.10.1, 1.0.0, 1.0.0-x86, 5.0.0].
@@ -50,14 +50,14 @@ Download
 * [32-bit](https://app.box.com/gnvm/1/2014967291) | [64-bit](https://app.box.com/gnvm/1/2014967689) Host by Box.com
 * [32-bit](https://github.com/Kenshin/gnvm-bin/blob/master/32-bit/gnvm.exe?raw=true) | [64-bit](https://github.com/Kenshin/gnvm-bin/blob/master/64-bit/gnvm.exe?raw=true) Host by Github.com
 
-* For go user, please usage  
+* For go user, please usage
   `go get github.com/Kenshin/gnvm`
 
-* For git user, please usage  
+* For git user, please usage
   `git clone git@github.com:Kenshin/gnvm-bin.git`
 
-* For curl user, please usage  
-  `curl -L https://github.com/Kenshin/gnvm-bin/blob/master/32-bit/gnvm.exe?raw=true -o gnvm.exe`  
+* For curl user, please usage
+  `curl -L https://github.com/Kenshin/gnvm-bin/blob/master/32-bit/gnvm.exe?raw=true -o gnvm.exe`
   `curl -L https://github.com/Kenshin/gnvm-bin/blob/master/64-bit/gnvm.exe?raw=true -o gnvm.exe`
 
 Installation
@@ -120,7 +120,7 @@ gnvm config registry TAOBAO
 ```
 
 **Install multiple Node.js**
-  > Install any Node.js version include: automatic recognition of `latest` version, `io.js` version and specified arch, e.g. `x.xx.xx-x64`.
+  > Install any Node.js version include: automatic recognition of `latest` version and specified arch, e.g. `x.xx.xx-x64`.
 
 ```
 gnvm install latest 1.0.0-x86 1.0.0-x64 5.0.0

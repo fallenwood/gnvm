@@ -13,7 +13,6 @@ import (
 	"io/ioutil"
 	"os"
 	"runtime"
-	"strconv"
 	"strings"
 
 	// local
@@ -139,7 +138,7 @@ func InstallNode(args []string, global bool) int {
 	}()
 
 	for _, v := range args {
-		ver, io, arch, suffix, err := util.ParseNodeVer(v)
+		ver, arch, suffix, err := util.ParseNodeVer(v)
 		if err != nil {
 			switch err.Error() {
 			case "1":
@@ -193,11 +192,8 @@ func InstallNode(args []string, global bool) int {
 			continue
 		}
 
-		// get and set url( include iojs)
+		// get and set url
 		url := config.GetConfig(config.REGISTRY)
-		if io {
-			url = config.GetIOURL(url)
-		}
 
 		// add task
 		if url, err := util.GetRemoteNodePath(url, ver, arch); err == nil {
@@ -358,13 +354,7 @@ func Search(s string) {
 	}
 
 	// set url
-	url := config.GetConfig(config.REGISTRY)
-	if arr := strings.Split(s, "."); len(arr) == 3 {
-		if ver, _ := strconv.Atoi(arr[0]); ver >= 1 && ver <= 3 {
-			url = config.GetIOURL(url)
-		}
-	}
-	url += util.NODELIST
+	url := config.GetConfig(config.REGISTRY) + util.NODELIST
 
 	// try catch
 	defer func() {
@@ -443,7 +433,7 @@ func LS(isPrint bool) ([]string, error) {
 					desc = " -- global"
 				}
 
-				ver, _, _, suffix, _ := util.ParseNodeVer(version)
+				ver, _, suffix, _ := util.ParseNodeVer(version)
 				if suffix == "x86" {
 					desc = " -- x86"
 				} else if suffix == "x64" {
@@ -481,16 +471,11 @@ func LS(isPrint bool) ([]string, error) {
 
  Param:
  	- limit: print max line
- 	- io:    when io == true, print iojs
 
 */
-func LsRemote(limit int, io bool) {
+func LsRemote(limit int) {
 	// set url
-	url := config.GetConfig(config.REGISTRY)
-	if io {
-		url = config.GetIOURL(url)
-	}
-	url += util.NODELIST
+	url := config.GetConfig(config.REGISTRY) + util.NODELIST
 
 	// try catch
 	defer func() {

@@ -231,25 +231,6 @@ func List() {
 }
 
 /*
- Get io.js url
-
- Param:
- 	- url:   config property, include: registry noderoot latestversion globalversion
-
- Return:
- 	- value: config property value
-
-*/
-func GetIOURL(url string) string {
-	if url == util.ORIGIN_TAOBAO {
-		url = strings.Replace(url, "/node", "/iojs", -1)
-	} else if url == util.ORIGIN_DEFAULT {
-		url = strings.Replace(url, "nodejs.org", "iojs.org", -1)
-	}
-	return url
-}
-
-/*
  Verify config registry url structural correctness, include:
  	- url:  <url>
  	- json: <url>/index.json

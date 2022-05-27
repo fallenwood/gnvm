@@ -22,7 +22,6 @@ import (
 const (
 	NODE = "node.exe"
 	GNVM = "gnvm.exe"
-	IOJS = "iojs.exe"
 
 	UNKNOWN = "unknown"
 	LATEST  = "latest"
@@ -197,8 +196,7 @@ func FormatLatVer(latest *string, value string, print bool) {
 	- 0: no exec
 	- 1: only x86 exec
 	- 2: x86 and x64 exec, folder is "x64/" and <root>
-	- 3: io.js exec, folder is "win-x64/" and "win-x86/"
-	- 4: x86 and x64 exec, folder is "win-x64/" and "win-x86/"
+	- 3: x86 and x64 exec, folder is "win-x64/" and "win-x86/"
 */
 func GetNodeVerLev(ver float64) (level int) {
 	switch {
@@ -217,7 +215,7 @@ func GetNodeVerLev(ver float64) (level int) {
 }
 
 /*
- Parse arguments return version, io, suffix and arch
+ Parse arguments return version, suffix and arch
 
  Param:
  	s support format: <version>-<arch>, e.g.
@@ -226,13 +224,12 @@ func GetNodeVerLev(ver float64) (level int) {
 
  Return:
 	- ver    : x.xx.xx
-	- iojs   : true  and false
 	- arch   : "386" and "amd64"
 	- suffix : "x86" and "x64"  and ""
 	- err    : includ, "1" "2", "3", "4", "5"
 
 */
-func ParseNodeVer(s string) (ver string, iojs bool, arch, suffix string, err error) {
+func ParseNodeVer(s string) (ver string, arch, suffix string, err error) {
 	arr := strings.Split(strings.ToLower(s), "-")
 
 	// get ver
@@ -249,7 +246,6 @@ func ParseNodeVer(s string) (ver string, iojs bool, arch, suffix string, err err
 		if len(arr) > 1 {
 			P(WARING, "%v parameter not support suffix.\n", s)
 		}
-		iojs = false
 		arch = runtime.GOARCH
 		suffix = ""
 		return
@@ -266,9 +262,6 @@ func ParseNodeVer(s string) (ver string, iojs bool, arch, suffix string, err err
 		// no exec
 		err = errors.New("1")
 		return
-	case 3:
-		// get iojs
-		iojs = true
 	}
 
 	// get arch
@@ -347,7 +340,6 @@ func GetLatVer(url string) string {
 /*
  Return node.exe real url, e.g.
  	- http://npm.taobao.org/mirrors/node/v5.9.0/win-x64/node.exe
- 	- http://npm.taobao.org/mirrors/iojs/v1.0.0/win-x86/iojs.exe
 
  Param:
 	- url:     remote Node.js url, e.g. http://npm.taobao.org/mirrors/node
@@ -377,11 +369,6 @@ func GetRemoteNodePath(url, version, arch string) (string, error) {
 		} else {
 			folder = "/win-x86/"
 		}
-	}
-
-	// when level == 3, exec is "iojs.exe"
-	if level == 3 {
-		exec = IOJS
 	}
 
 	return url + "v" + version + folder + exec, nil
