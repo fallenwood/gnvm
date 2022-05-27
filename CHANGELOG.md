@@ -1,6 +1,9 @@
-v0.2.1 2022-05-27
+v0.2.2 2022-05-27
 
 CHANGELOG
+- 2022-05-27, Version 0.2.2:
+* update script to cross build windows binary
+
 - 2022-05-27, Version 0.2.1:
 * Forked by @fallenwood
 * Use github action instead of travis
