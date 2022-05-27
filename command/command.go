@@ -448,7 +448,6 @@ func init() {
 	lsCmd.PersistentFlags().BoolVarP(&remote, "remote", "r", false, "get remote all node.js version list.")
 	lsCmd.PersistentFlags().BoolVarP(&detail, "detail", "d", false, "get remote all node.js version details list.")
 	lsCmd.PersistentFlags().IntVarP(&limit, "limit", "l", 0, "get remote all node.js version details list by limit count.")
-	lsCmd.PersistentFlags().BoolVarP(&io, "io", "i", false, "get remote all io.js version details list.")
 	//nodeVersionCmd.PersistentFlags().BoolVarP(&remote, "remote", "r", false, "get remote node.js latest version.")
 	versionCmd.PersistentFlags().BoolVarP(&remote, "remote", "r", false, "get remote gnvm latest version.")
 	versionCmd.PersistentFlags().BoolVarP(&detail, "detail", "d", false, "get remote CHANGELOG.")
