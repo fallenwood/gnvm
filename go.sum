@@ -1,7 +1,5 @@
 github.com/Kenshin/cprint v0.0.0-20140603071510-5d2b3710156e h1:8QAlSuParDJavdwaxJweyUGYrNLGaxpO2YUEUs+qE5c=
 github.com/Kenshin/cprint v0.0.0-20140603071510-5d2b3710156e/go.mod h1:udSEsTGD4zb41/qzdT1rGzsV8jQlCQKA/f5Ptb/e1Cg=
-github.com/Kenshin/curl v0.0.0-20160421052854-aeef514670e2 h1:l09lMYyYBY9VuoCWjnCeIsT5M0nfnoOsZ7MAsOT5v4E=
-github.com/Kenshin/curl v0.0.0-20160421052854-aeef514670e2/go.mod h1:62ijhcEAJCcWn/6pmaDofiPTQ+Wqb/CF2B7vCVi42u8=
 github.com/Kenshin/regedit v0.0.0-20160325040319-729a79824571 h1:ALuA0Y3HasVOuvIdO2dAJd5lw00umzx9uQ57Ugy+Jwc=
 github.com/Kenshin/regedit v0.0.0-20160325040319-729a79824571/go.mod h1:TEzAw5DyuTohSVAb+6uJ4gmnDtTh7KkUeK2YO4MlPFk=
 github.com/bitly/go-simplejson v0.5.0 h1:6IH+V8/tVMab511d5bn4M7EwGXZf9Hj6i2xSwkNEM+Y=

@@ -250,7 +250,6 @@ c:\> npm -v
 
 依賴
 ---
-* <https://github.com/Kenshin/curl>
 * <https://github.com/Kenshin/cprint>
 * <https://github.com/Kenshin/regedit>
 

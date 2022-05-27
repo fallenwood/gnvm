@@ -3,7 +3,6 @@ package nodehandle
 import (
 
 	// lib
-	"github.com/Kenshin/curl"
 	"github.com/bitly/go-simplejson"
 
 	// go
@@ -14,6 +13,7 @@ import (
 	"strings"
 
 	// local
+	"gnvm/curl"
 	"gnvm/util"
 )
 

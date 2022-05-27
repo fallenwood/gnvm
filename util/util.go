@@ -4,7 +4,6 @@ import (
 
 	// lib
 	. "github.com/Kenshin/cprint"
-	"github.com/Kenshin/curl"
 
 	// go
 	"encoding/hex"
@@ -17,6 +16,9 @@ import (
 	"runtime"
 	"strconv"
 	"strings"
+
+	// local
+	"gnvm/curl"
 )
 
 const (

@@ -4,7 +4,6 @@ import (
 
 	// lib
 	. "github.com/Kenshin/cprint"
-	"github.com/Kenshin/curl"
 	"github.com/bitly/go-simplejson"
 
 	// go
@@ -20,6 +19,7 @@ import (
 
 	// local
 	"gnvm/config"
+	"gnvm/curl"
 	"gnvm/util"
 )
 

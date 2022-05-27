@@ -6,6 +6,7 @@ CHANGELOG
 * Use github action instead of travis
 * Add go module
 * Remove iojs support
+* Restore curl util to fix -1 content length
 
 - 2016-04-27, Version 0.2.0:
 * Add new feature `gnvm session` Use any Node.js version of the local already exists version by current session.

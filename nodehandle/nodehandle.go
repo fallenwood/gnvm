@@ -4,7 +4,6 @@ import (
 
 	// lib
 	. "github.com/Kenshin/cprint"
-	"github.com/Kenshin/curl"
 
 	// go
 	//"log"
@@ -17,6 +16,7 @@ import (
 
 	// local
 	"gnvm/config"
+	"gnvm/curl"
 	"gnvm/util"
 )
 

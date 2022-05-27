@@ -11,7 +11,6 @@ require (
 )
 
 require (
-	github.com/Kenshin/curl v0.0.0-20160421052854-aeef514670e2 // indirect
 	github.com/daviddengcn/go-colortext v1.0.0 // indirect
 	github.com/howeyc/fsnotify v0.9.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
