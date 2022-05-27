@@ -31,6 +31,9 @@ const (
 	REGISTRY     = "registry"
 	REGISTRY_KEY = REGISTRY + ": "
 
+	NPM_REGISTRY     = "npm"
+	NPM_REGISTRY_KEY = NPM_REGISTRY + ": "
+
 	NODEROOT     = "noderoot"
 	NODEROOT_KEY = NODEROOT + ": "
 
@@ -130,7 +133,7 @@ func readConfig() {
 
 */
 func SetConfig(key string, value interface{}) string {
-	if key == "registry" {
+	if key == "registry" || key == "npm" {
 		if !strings.HasPrefix(value.(string), "http://") && !strings.HasPrefix(value.(string), "https://") {
 			P(WARING, "%v need %v", value.(string), "http(s)://", "\n")
 			value = "http://" + value.(string)
@@ -140,7 +143,7 @@ func SetConfig(key string, value interface{}) string {
 		}
 		reg, _ := regexp.Compile(`^https?:\/\/(w{3}\.)?([-a-zA-Z0-9.])+(\.[a-zA-Z]+)(:\d{1,4})?(\/)+`)
 		if !reg.MatchString(value.(string)) {
-			P(ERROR, "%v value %v must valid url.\n", "registry", value.(string))
+			P(ERROR, "%v value %v must valid url.\n", key, value.(string))
 			return ""
 		}
 	}

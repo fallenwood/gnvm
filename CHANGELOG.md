@@ -2,7 +2,8 @@ v0.2.2 2022-05-27
 
 CHANGELOG
 - 2022-05-27, Version 0.2.2:
-* update script to cross build windows binary
+* Update script to cross build windows binary
+* Add `gnvm config npm` command to set npm mirror
 
 - 2022-05-27, Version 0.2.1:
 * Forked by @fallenwood

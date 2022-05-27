@@ -3,6 +3,8 @@ package command
 import (
 
 	// lib
+	"strings"
+
 	. "github.com/Kenshin/cprint"
 	"github.com/spf13/cobra"
 
@@ -302,13 +304,15 @@ var configCmd = &cobra.Command{
 	Use:   "config",
 	Short: "Setter and getter .gnvmrc file",
 	Long: `Setter and getter .gnvmrc file.  e.g. :
-gnvm config                   :Print all propertys from .gnvmrc.
-gnvm config INIT              :Initialization .gnvmrc file.
-gnvm config [props]           :Get .gnvmrc file props.
-gnvm config registry [custom] :Custom  is valid url.
-gnvm config registry DEFAULT  :DEFAULT is built-in variable. value is http://nodejs.org/dist/
-gnvm config registry TAOBAO   :TAOBAO  is built-in variable. value is http://npm.taobao.org/mirrors/node
-gnvm config registry test     :Validation .gnvmfile registry property.
+gnvm config                       :Print all propertys from .gnvmrc.
+gnvm config INIT                  :Initialization .gnvmrc file.
+gnvm config [props]               :Get .gnvmrc file props.
+gnvm config registry [custom]     :Custom  is valid url.
+gnvm config registry DEFAULT      :DEFAULT is built-in variable. value is http://nodejs.org/dist/
+gnvm config registry TAOBAO       :TAOBAO  is built-in variable. value is http://npm.taobao.org/mirrors/node
+gnvm config registry test         :Validation .gnvmfile registry property.
+gnvm config npm DEFAULT  :DEFAULT is built-in npm variable. value is https://github.com/npm/cli/archive/refs/tags/
+gnvm config npm test         :Validation .gnvmfile npm registry property.
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
@@ -334,37 +338,59 @@ gnvm config registry test     :Validation .gnvmfile registry property.
 			args[1] = util.EqualAbs("DEFAULT", args[1])
 			args[1] = util.EqualAbs("TAOBAO", args[1])
 			args[1] = util.EqualAbs("test", args[1])
-			if args[0] != "registry" {
+
+			if args[0] == "registry" {
+				registry := strings.ToUpper(args[1])
+				switch registry {
+				case "DEFAULT":
+					if newValue := config.SetConfig(args[0], util.ORIGIN_DEFAULT); newValue != "" {
+						P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
+					}
+				case "TAOBAO":
+					if newValue := config.SetConfig(args[0], util.ORIGIN_TAOBAO); newValue != "" {
+						P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
+					}
+				case "TUNA":
+					if newValue := config.SetConfig(args[0], util.ORIGIN_TUNA); newValue != "" {
+						P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
+					}
+				case "OPENTUNA":
+					if newValue := config.SetConfig(args[0], util.ORIGIN_OPENTUNA); newValue != "" {
+						P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
+					}
+				case "USTC":
+					if newValue := config.SetConfig(args[0], util.ORIGIN_USTC); newValue != "" {
+						P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
+					}
+				case "TEST":
+					config.Verify()
+				default:
+					if newValue := config.SetConfig(args[0], args[1]); newValue != "" {
+						P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
+					}
+				}
+			} else if args[0] == "npm" {
+
+				registry := strings.ToUpper(args[1])
+				switch registry {
+				case "DEFAULT":
+					if newValue := config.SetConfig(args[0], nodehandle.NPM_DEFAULT); newValue != "" {
+						P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
+					}
+				case "TAOBAO":
+					if newValue := config.SetConfig(args[0], nodehandle.NPM_TAOBAO); newValue != "" {
+						P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
+					}
+				case "TEST":
+					config.Verify()
+				default:
+					if newValue := config.SetConfig(args[0], args[1]); newValue != "" {
+						P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
+					}
+				}
+			} else {
 				P(ERROR, "%v only support [%v] keyword. See '%v'.\n", "gnvm config", "registry", "gnvm help config")
 				return
-			}
-			switch args[1] {
-			case "DEFAULT":
-				if newValue := config.SetConfig(args[0], util.ORIGIN_DEFAULT); newValue != "" {
-					P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
-				}
-			case "TAOBAO":
-				if newValue := config.SetConfig(args[0], util.ORIGIN_TAOBAO); newValue != "" {
-					P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
-				}
-			case "TUNA":
-				if newValue := config.SetConfig(args[0], util.ORIGIN_TUNA); newValue != "" {
-					P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
-				}
-			case "OPENTUNA":
-				if newValue := config.SetConfig(args[0], util.ORIGIN_OPENTUNA); newValue != "" {
-					P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
-				}
-			case "USTC":
-				if newValue := config.SetConfig(args[0], util.ORIGIN_USTC); newValue != "" {
-					P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
-				}
-			case "test":
-				config.Verify()
-			default:
-				if newValue := config.SetConfig(args[0], args[1]); newValue != "" {
-					P(DEFAULT, "Set success, %v new value is %v\n", args[0], newValue)
-				}
 			}
 		} else {
 			P(ERROR, "%v parameter maximum is 2, please check your input. See '%v'.\n", "gnvm config", "gnvm help config")

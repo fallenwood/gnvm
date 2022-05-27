@@ -45,7 +45,7 @@ func Reg(s string) {
 	P(NOTICE, "current config %v is %v\n", "noderoot", noderoot)
 	P(NOTICE, "set environment variable %v is %v [Y/n]? ", NODE_HOME, noderoot)
 
-	fmt.Scanf("%s\n", &prompt)
+	fmt.Scanf("%s", &prompt)
 	prompt = strings.ToLower(prompt)
 
 	if prompt == "y" {
@@ -53,7 +53,7 @@ func Reg(s string) {
 			if arr, err := query(PATH); err == nil {
 				prompt = "n"
 				P(NOTICE, "add environment variable %v to %v [Y/n]? ", NODE_HOME, PATH)
-				fmt.Scanf("%s\n", &prompt)
+				fmt.Scanf("%s", &prompt)
 
 				prompt = strings.ToLower(prompt)
 				if prompt == "y" {
