@@ -1,10 +1,9 @@
 ![logo](http://i.imgur.com/Z4iPSgQ.png) GNVM - Node.js 多版本管理器
 ================================
-[![Travis][travis-badge]][travis-link]
+[![ci][ci-badge]][ci-link]
 [![Version][version-badge]][version-link]
-[![Gitter][gitter-badge]][gitter-link]
-[![Slack][slack-badge]][slack-link]
-[![Jianliao][jianliao-badge]][jianliao-link]
+
+从 [Kenshin/gnvm](https://github.com/Kenshin/gnvm "") fork 而来。
 #### `GNVM` 是一个简单的 `Windows` 下 Node.js 多版本管理器，类似的 `nvm` `nvmw` `nodist` 。
 ```
 c:\> gnvm install latest 1.0.0-x86 1.0.0-x64 5.0.0
@@ -34,32 +33,16 @@ Update success, current Node.js latest version is 5.10.0.
 * 下载即用，无需配置。
 * 彩色日志输出。
 * 支持多线程下载。
-* 内置 [TAOBAO](http://npm.taobao.org/mirrors/node)，方便切换，也支持自定义。
+* 内置 [TAOBAO](http://npm.taobao.org/mirrors/node), [TUNA](https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/), [OpenTuna](https://opentuna.cn/nodejs-release/), [USTC](https://mirrors.ustc.edu.cn/node/), 方便切换，也支持自定义。
 * 支持 `NPM` 下载/安装/配置。
-
-主页
----
-[![Website][www-badge]][www-link]
 
 文档
 ---
-[English](https://github.com/kenshin/gnvm/blob/master/README.en.md) | [繁體中文](https://github.com/kenshin/gnvm/blob/master/README.tw.md)
+[English](https://github.com/fallenwood/gnvm/blob/master/README.en.md)
 
 下载
 ---
-* [32-bit](https://app.box.com/gnvm/1/2014967291) | [64-bit](https://app.box.com/gnvm/1/2014967689) 常用地址，Box，速度稍慢
-* [32-bit](http://pan.baidu.com/s/1gdmVgen#dir/path=%2F%E6%88%91%E7%9A%84%E5%85%B1%E4%BA%AB%2Fgnvm%2F32-bit) | [64-bit](http://pan.baidu.com/s/1gdmVgen#dir/path=%2F%E6%88%91%E7%9A%84%E5%85%B1%E4%BA%AB%2Fgnvm%2F64-bit) 备用地址，百度网盘，速度快
-* [32-bit](https://github.com/Kenshin/gnvm-bin/blob/master/32-bit/gnvm.exe?raw=true) | [64-bit](https://github.com/Kenshin/gnvm-bin/blob/master/64-bit/gnvm.exe?raw=true) 备用地址，Github
-
-* 已经安装了go的用户，使用
-  `go get github.com/Kenshin/gnvm`
-
-* 已经安装了git的用户，使用
-  `git clone git@github.com:Kenshin/gnvm-bin.git`
-
-* 已经安装了curl的用户，使用
-  `curl -L https://github.com/Kenshin/gnvm-bin/blob/master/32-bit/gnvm.exe?raw=true -o gnvm.exe`
-  `curl -L https://github.com/Kenshin/gnvm-bin/blob/master/64-bit/gnvm.exe?raw=true -o gnvm.exe`
+* [Github](https://github.com/fallenwood/gnvm/releases "")
 
 安装
 ---
@@ -270,9 +253,8 @@ c:\> npm -v
 
 相关链接
 ---
-* [更新日志](https://github.com/kenshin/gnvm/blob/master/CHANGELOG.md)
-* [联系方式](http://kenshin.wang/) | [邮件](kenshin@ksria.com) | [微博](http://weibo.com/23784148)
-* [反馈](https://github.com/kenshin/gnvm/issues)
+* [更新日志](https://github.com/fallenwood/gnvm/blob/master/CHANGELOG.md)
+* [反馈](https://github.com/fallenwood/gnvm/issues)
 
 感谢
 ---
@@ -284,17 +266,7 @@ c:\> npm -v
 [![license-badge]][license-link]
 
 <!-- Link -->
-[www-badge]:        https://img.shields.io/badge/website-gnvm.ksria.com-1DBA90.svg
-[www-link]:         http://ksria.com/gnvm
-[version-badge]:    https://img.shields.io/badge/lastest_version-0.2.0-blue.svg
-[version-link]:     https://github.com/kenshin/gnvm/releases
-[travis-badge]:     https://travis-ci.org/Kenshin/gnvm.svg?branch=master
-[travis-link]:      https://travis-ci.org/Kenshin/gnvm
-[gitter-badge]:     https://badges.gitter.im/kenshin/gnvm.svg
-[gitter-link]:      https://gitter.im/kenshin/gnvm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
-[slack-badge]:      https://img.shields.io/badge/chat-slack-orange.svg
-[slack-link]:       https://gnvm.slack.com/
-[jianliao-badge]:   https://img.shields.io/badge/chat-jianliao-yellowgreen.svg
-[jianliao-link]:    https://guest.jianliao.com/rooms/76dce8b01v
-[license-badge]:    https://img.shields.io/github/license/mashape/apistatus.svg
-[license-link]:     https://opensource.org/licenses/MIT
+[ci-badge]:         https://github.com/fallenwood/gnvm/actions/workflows/master.yml/badge.svg
+[ci-link]:          https://github.com/fallenwood/gnvm/actions/workflows/master.yml
+[version-badge]:    https://img.shields.io/badge/lastest_version-0.2.2-blue.svg
+[version-link]:     https://github.com/fallenwood/gnvm/releases

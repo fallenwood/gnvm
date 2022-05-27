@@ -1,10 +1,10 @@
 ![logo](http://i.imgur.com/Z4iPSgQ.png) GNVM - Node.js version manager on Windows
 ================================
-[![Travis][travis-badge]][travis-link]
+[![ci][ci-badge]][ci-link]
 [![Version][version-badge]][version-link]
-[![Gitter][gitter-badge]][gitter-link]
-[![Slack][slack-badge]][slack-link]
-[![Jianliao][jianliao-badge]][jianliao-link]
+
+Forked from [Kenshin/gnvm](https://github.com/Kenshin/gnvm "").
+
 #### `GNVM` is simple multiple Node.js version manager by Go, like `nvm` `nvmw` `nodist`.
 ```
 c:\> gnvm install latest 1.0.0-x86 1.0.0-x64 5.0.0
@@ -34,31 +34,16 @@ Characteristic
 * Direct use, no configuration.
 * Color stdout.
 * Support multiple download.
-* Built-in [TAOBAO] (http://npm.taobao.org/mirrors/node), convenient switching, also support custom.
+* Built-in [TAOBAO](http://npm.taobao.org/mirrors/node), [TUNA](https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/), [OpenTuna](https://opentuna.cn/nodejs-release/), [USTC](https://mirrors.ustc.edu.cn/node/), convenient switching, also support custom.
 * Support `NPM` download / install.
-
-Website
----
-[![Website][www-badge]][www-link]
 
 Document
 ---
-[简体中文](https://github.com/kenshin/gnvm/blob/master/README.md) | [繁體中文](https://github.com/kenshin/gnvm/blob/master/README.tw.md)
+[简体中文](https://github.com/fallenwood/gnvm/blob/master/README.md)
 
 Download
 ---
-* [32-bit](https://app.box.com/gnvm/1/2014967291) | [64-bit](https://app.box.com/gnvm/1/2014967689) Host by Box.com
-* [32-bit](https://github.com/Kenshin/gnvm-bin/blob/master/32-bit/gnvm.exe?raw=true) | [64-bit](https://github.com/Kenshin/gnvm-bin/blob/master/64-bit/gnvm.exe?raw=true) Host by Github.com
-
-* For go user, please usage
-  `go get github.com/Kenshin/gnvm`
-
-* For git user, please usage
-  `git clone git@github.com:Kenshin/gnvm-bin.git`
-
-* For curl user, please usage
-  `curl -L https://github.com/Kenshin/gnvm-bin/blob/master/32-bit/gnvm.exe?raw=true -o gnvm.exe`
-  `curl -L https://github.com/Kenshin/gnvm-bin/blob/master/64-bit/gnvm.exe?raw=true -o gnvm.exe`
+* [Github](https://github.com/fallenwood/gnvm/releases "")
 
 Installation
 ---
@@ -269,9 +254,8 @@ To-Do
 
 About
 ---
-* [CHANGELOG](https://github.com/kenshin/gnvm/blob/master/CHANGELOG.md)
-* [Contact](http://kenshin.wang/) | [Email](kenshin@ksria.com) | [Twitter](https://twitter.com/wanglei001)
-* [Feedback](https://github.com/kenshin/gnvm/issues)
+* [CHANGELOG](https://github.com/fallenwood/gnvm/blob/master/CHANGELOG.md)
+* [Feedback](https://github.com/fallenwood/gnvm/issues)
 
 Thanks
 ---
@@ -283,17 +267,7 @@ Licenses
 [![license-badge]][license-link]
 
 <!-- Link -->
-[www-badge]:        https://img.shields.io/badge/website-gnvm.ksria.com-1DBA90.svg
-[www-link]:         http://ksria.com/gnvm
-[version-badge]:    https://img.shields.io/badge/lastest_version-0.2.0-blue.svg
-[version-link]:     https://github.com/kenshin/gnvm/releases
-[travis-badge]:     https://travis-ci.org/Kenshin/gnvm.svg?branch=master
-[travis-link]:      https://travis-ci.org/Kenshin/gnvm
-[gitter-badge]:     https://badges.gitter.im/kenshin/gnvm.svg
-[gitter-link]:      https://gitter.im/kenshin/gnvm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
-[slack-badge]:      https://img.shields.io/badge/chat-slack-orange.svg
-[slack-link]:       https://gnvm.slack.com/
-[jianliao-badge]:   https://img.shields.io/badge/chat-jianliao-yellowgreen.svg
-[jianliao-link]:    https://guest.jianliao.com/rooms/76dce8b01v
-[license-badge]:    https://img.shields.io/github/license/mashape/apistatus.svg
-[license-link]:     https://opensource.org/licenses/MIT
+[ci-badge]:         https://github.com/fallenwood/gnvm/actions/workflows/master.yml/badge.svg
+[ci-link]:          https://github.com/fallenwood/gnvm/actions/workflows/master.yml
+[version-badge]:    https://img.shields.io/badge/lastest_version-0.2.2-blue.svg
+[version-link]:     https://github.com/fallenwood/gnvm/releases
