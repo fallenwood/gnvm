@@ -270,3 +270,5 @@ c:\> npm -v
 [ci-link]:          https://github.com/fallenwood/gnvm/actions/workflows/master.yml
 [version-badge]:    https://img.shields.io/badge/lastest_version-0.2.2-blue.svg
 [version-link]:     https://github.com/fallenwood/gnvm/releases
+[license-badge]:    https://img.shields.io/badge/License-MIT-yellow.svg
+[license-link]:     https://opensource.org/licenses/MIT
