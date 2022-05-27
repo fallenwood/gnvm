@@ -59,7 +59,6 @@ var installCmd = &cobra.Command{
 gnvm install latest                  :Download latest Node.js version from .gnvmrc registry.
 gnvm install x.xx.xx y.yy.yy         :Multiple Node.js version download.
 gnvm install x.xx.xx-x86             :Assign arch  version, suffix include: x86 and x64.
-gnvm install 1.xx.xx                 :Assign io.js version.
 gnvm install x.xx.xx --global        :Download and auto invoke 'gnvm use x.xx.xx'.
 gnvm install npm                     :Not logger support command, please usage 'gnvm npm x.xx.xx'. See 'gnvm help npm'.
 `,
@@ -242,8 +241,6 @@ var lsCmd = &cobra.Command{
 gnvm ls                  :Print local  Node.js version list.
 gnvm ls -r               :Print remote Node.js version list.
 gnvm ls -r -d            :Print remote Node.js details version list.
-gnvm ls -r -i            :Print remote io.js   version list.
-gnvm ls -r -d -i         :Print remote io.js   details version list.
 gnvm ls -r -d --limit=xx :Print remote Node.js maximum number of rows is xx.( default, print max rows. )
 `,
 	Run: func(cmd *cobra.Command, args []string) {
@@ -252,9 +249,6 @@ gnvm ls -r -d --limit=xx :Print remote Node.js maximum number of rows is xx.( de
 		} else {
 			switch {
 			case !remote && !detail:
-				if io {
-					P(WARING, "%v no support flag %v, please check your input. See '%v'.\n", "gnvm ls", "-i", "gnvm help ls")
-				}
 				if limit != 0 {
 					P(WARING, "%v no support flag %v, please check your input. See '%v'.\n", "gnvm ls", "-l", "gnvm help ls")
 				}
@@ -263,12 +257,12 @@ gnvm ls -r -d --limit=xx :Print remote Node.js maximum number of rows is xx.( de
 				if limit != 0 {
 					P(WARING, "%v no support flag %v, please check your input. See '%v'.\n", "gnvm ls -r", "-l", "gnvm help ls")
 				}
-				nodehandle.LsRemote(-1, io)
+				nodehandle.LsRemote(-1)
 			case remote && detail:
 				if limit < 0 {
 					P(WARING, "%v must be positive integer, please check your input. See '%v'.\n", "--limit", "gnvm help ls")
 				} else {
-					nodehandle.LsRemote(limit, io)
+					nodehandle.LsRemote(limit)
 				}
 			case !remote && detail:
 				P(ERROR, "flag %v depends on %v flag, e.g. '%v', See '%v'.", "-d", "-r", "gnvm ls -r -d", "gnvm help ls", "\n")

@@ -1,11 +1,11 @@
-![logo](http://i.imgur.com/Z4iPSgQ.png) GNVM - Node.js 多版本管理器  
-================================  
+![logo](http://i.imgur.com/Z4iPSgQ.png) GNVM - Node.js 多版本管理器
+================================
 [![Travis][travis-badge]][travis-link]
 [![Version][version-badge]][version-link]
 [![Gitter][gitter-badge]][gitter-link]
 [![Slack][slack-badge]][slack-link]
-[![Jianliao][jianliao-badge]][jianliao-link]  
-#### `GNVM` 是一個簡單的 `Windows` 下 Node.js 多版本管理器，類似的 `nvm` `nvmw` `nodist` 。  
+[![Jianliao][jianliao-badge]][jianliao-link]
+#### `GNVM` 是一個簡單的 `Windows` 下 Node.js 多版本管理器，類似的 `nvm` `nvmw` `nodist` 。
 ```
 c:\> gnvm install latest 1.0.0-x86 1.0.0-x64 5.0.0
 Start download Node.js versions [5.10.1, 1.0.0, 1.0.0-x86, 5.0.0].
@@ -51,14 +51,14 @@ Update success, current Node.js latest version is 5.10.0.
 * [32-bit](http://pan.baidu.com/s/1gdmVgen#dir/path=%2F%E6%88%91%E7%9A%84%E5%85%B1%E4%BA%AB%2Fgnvm%2F32-bit) | [64-bit](http://pan.baidu.com/s/1gdmVgen#dir/path=%2F%E6%88%91%E7%9A%84%E5%85%B1%E4%BA%AB%2Fgnvm%2F64-bit) 備用地址，百度網盤，速度快
 * [32-bit](https://github.com/Kenshin/gnvm-bin/blob/master/32-bit/gnvm.exe?raw=true) | [64-bit](https://github.com/Kenshin/gnvm-bin/blob/master/64-bit/gnvm.exe?raw=true) 備用地址，Github
 
-* 已經安裝了go的用戶，使用  
+* 已經安裝了go的用戶，使用
   `go get github.com/Kenshin/gnvm`
 
-* 已經安裝了git的用戶，使用  
+* 已經安裝了git的用戶，使用
   `git clone git@github.com:Kenshin/gnvm-bin.git`
 
-* 已經安裝了curl的用戶，使用  
-  `curl -L https://github.com/Kenshin/gnvm-bin/blob/master/32-bit/gnvm.exe?raw=true -o gnvm.exe`  
+* 已經安裝了curl的用戶，使用
+  `curl -L https://github.com/Kenshin/gnvm-bin/blob/master/32-bit/gnvm.exe?raw=true -o gnvm.exe`
   `curl -L https://github.com/Kenshin/gnvm-bin/blob/master/64-bit/gnvm.exe?raw=true -o gnvm.exe`
 
 安裝
@@ -121,7 +121,7 @@ gnvm config registry TAOBAO
 ```
 
 **安裝 多個 Node.js**
-  > 安裝任意版本的 Node.js 包括： 自動匹配 `latest` / `io.js` version 以及 選擇 32 / 64 位，例如 `x.xx.xx-x64` 。
+  > 安裝任意版本的 Node.js 包括： 自動匹配 `latest` version 以及 選擇 32 / 64 位，例如 `x.xx.xx-x64` 。
 
 ```
 gnvm install latest 1.0.0-x86 1.0.0-x64 5.0.0

@@ -303,11 +303,7 @@ func getNodeNpmVer() string {
 		panic(errors.New("not exist global node.exe. please usage 'gnvm install latest -g' frist."))
 	}
 
-	url := config.GetConfig(config.REGISTRY)
-	if level := util.GetNodeVerLev(util.FormatNodeVer(ver)); level == 3 {
-		url = config.GetIOURL(url)
-	}
-	url += util.NODELIST
+	url := config.GetConfig(config.REGISTRY) + util.NODELIST
 
 	nd, err := FindNodeDetailByVer(url, ver)
 	if err != nil {

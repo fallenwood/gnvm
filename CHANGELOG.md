@@ -5,6 +5,7 @@ CHANGELOG
 * Forked by @fallenwood
 * Use github action instead of travis
 * Add go module
+* Remove iojs support
 
 - 2016-04-27, Version 0.2.0:
 * Add new feature `gnvm session` Use any Node.js version of the local already exists version by current session.
