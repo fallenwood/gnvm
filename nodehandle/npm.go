@@ -24,12 +24,9 @@ import (
 )
 
 const (
-	LATNPMURL   = "https://raw.githubusercontent.com/npm/cli/latest/package.json"
-	NPMTAOBAO   = "http://npm.taobao.org/mirrors/npm/"
-	NPMDEFAULT  = "https://github.com/npm/cli/archive/refs/tags/"
-	NPMTUNA     = "https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/npm/"
-	NPMOPENTUNA = "https://opentuna.cn/nodejs-release/npm/"
-	NPMUSTC     = "https://mirrors.ustc.edu.cn/node/npm/"
+	LATNPM_URL  = "https://raw.githubusercontent.com/npm/cli/latest/package.json"
+	NPM_TAOBAO  = "https://npm.taobao.org/mirrors/npm/"
+	NPM_DEFAULT = "https://github.com/npm/cli/archive/refs/tags/"
 	ZIP         = ".zip"
 )
 
@@ -323,7 +320,7 @@ func getNodeNpmVer() string {
 
 */
 func getLatNPMVer() string {
-	_, res, err := curl.Get(LATNPMURL)
+	_, res, err := curl.Get(LATNPM_URL)
 	if err != nil {
 		panic(err)
 	}
@@ -368,16 +365,10 @@ func getLocalNPMVer() string {
 */
 func downloadNpm(ver string) {
 	version := "v" + ver + ZIP
-	host := NPMDEFAULT
-	switch config.GetConfig(config.REGISTRY) {
-	case util.ORIGIN_TAOBAO:
-		host = NPMTAOBAO
-	case util.ORIGIN_TUNA:
-		host = NPMTUNA
-	case util.ORIGIN_OPENTUNA:
-		host = NPMOPENTUNA
-	case util.ORIGIN_USTC:
-		host = NPMUSTC
+	host := NPM_DEFAULT
+	switch config.GetConfig(config.NPM_REGISTRY) {
+	case NPM_TAOBAO:
+		host = NPM_TAOBAO
 	}
 	url := host + version
 
