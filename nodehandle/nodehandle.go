@@ -659,7 +659,7 @@ func Version(remote, detail bool) {
 		return
 	}
 
-	code, res, err := curl.Get("http://ksria.com/gnvm/CHANGELOG.md")
+	code, res, err := curl.Get("https://raw.githubusercontent.com/fallenwood/gnvm/develop/CHANGELOG.md")
 	if code != 0 {
 		panic(err)
 	}
